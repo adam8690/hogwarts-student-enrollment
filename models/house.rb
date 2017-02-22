@@ -1,6 +1,7 @@
 class House
 
-  attr_accessor :name, :logo
+  attr_accessor :name, :logo 
+  attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i
@@ -17,7 +18,7 @@ class House
   def self.find_all
     sql = "SELECT * FROM houses;"
     houses = SqlRunner.run(sql)
-    return houses.map{ |house| house.new(house)}
+    return houses.map{ |house| House.new(house)}
   end
 
   def self.find(id)
