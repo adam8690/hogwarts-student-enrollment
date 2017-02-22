@@ -20,3 +20,9 @@ student3 = Student.new({
   "house" => "Gryffindor",
   "age" => "26"
 })
+
+student1.save()
+student2.save()
+student3.save()
+
+

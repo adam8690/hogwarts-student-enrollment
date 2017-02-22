@@ -1,6 +1,10 @@
 require_relative ('../db/sqlrunner.rb')
 
+
+
 class Student
+
+  attr_accessor :first_name, :last_name, :house, :age
 
 def initialize(options)
   @id = options['id']
@@ -28,7 +32,9 @@ def self.find(id)
   return Student.new(student.first)
 end
 
-
+def full_name()
+  "#{@first_name} #{@last_name}"
+end
 
 
 end
