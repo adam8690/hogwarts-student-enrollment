@@ -27,7 +27,7 @@ def self.find_all
 end
 
 def self.find(id)
-  sql = "SELECT * FROM students WHERE id=#{id};"
+  sql = "SELECT * FROM students WHERE id=#{@id};"
   student =SqlRunner.run(sql)
   return Student.new(student.first)
 end
@@ -36,5 +36,9 @@ def full_name()
   "#{@first_name} #{@last_name}"
 end
 
+def self.delete_all
+  sql= "DELETE FROM students;"
+  SqlRunner.run(sql)
+end
 
 end
